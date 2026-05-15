@@ -1,0 +1,4 @@
+1. Activar entorno: source venv/bin/activate
+2. Búsqueda unicamente por internet (cambiar el tipo de boletin):  python3 -m src.main --boletin tecnologias_medicas --fecha-envio 2026-05-06 --origen internet
+3. Búsqueda unicamente por csv (planilla de links): python3 -m src.main --boletin tecnologias_medicas --fecha-envio 2026-05-06 --csv-input datos_ejemplo.csv --origen csv 
+4. Búsqueda mixta: python3 -m src.main --boletin tecnologias_medicas --fecha-envio 2026-05-06 --csv-input datos_ejemplo.csv --origen ambos

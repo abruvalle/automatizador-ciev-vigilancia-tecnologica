@@ -1,0 +1,93 @@
+# =============================================================
+# Configuración del Boletín de Vigilancia Tecnológica — CIEV
+# =============================================================
+
+# --- Google Sheets ---
+google_sheets:
+  # ID del spreadsheet (se obtiene de la URL de Google Sheets)
+  # Ejemplo: https://docs.google.com/spreadsheets/d/ESTE_ES_EL_ID/edit
+  spreadsheet_id: ""
+  # Nombre de las hojas dentro del spreadsheet
+  hojas:
+    emprendedurismo: "Emprendedurismo"
+    tecnologias_medicas: "Tecnologías Médicas"
+  # Ruta al archivo de credenciales del Service Account
+  credentials_path: "config/credentials/service_account.json"
+  # Alternativa: ruta a un archivo CSV/Excel exportado manualmente
+  csv_fallback_path: ""
+
+# --- Boletín ---
+boletin:
+  # Categorías válidas para las fichas
+  categorias:
+    - becas
+    - convocatorias
+    - cursos
+    - eventos
+    - financiamiento
+    - normas
+    - noticias
+    - patentes
+    - titulo
+    - webinars
+  # Emojis para cada categoría (usado en el output Markdown)
+  categoria_emojis:
+    becas: "🎓"
+    convocatorias: "📢"
+    cursos: "📚"
+    eventos: "🎪"
+    financiamiento: "💰"
+    normas: "📜"
+    noticias: "📰"
+    patentes: "🔬"
+    titulo: "📌"
+    webinars: "💻"
+
+# --- Web Scraping ---
+scraping:
+  # Timeout en segundos para cada request
+  timeout: 15
+  # User-Agent para las requests
+  user_agent: "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+  # Máximo de reintentos por URL
+  max_retries: 2
+  # Delay entre requests (en segundos) para no saturar servidores
+  delay_between_requests: 1.5
+  # Usar Playwright para páginas dinámicas
+  use_playwright: false
+
+# --- LLM / IA ---
+llm:
+  # Proveedor: "openai", "gemini", "ollama"
+  provider: "openai"
+  # Modelo a usar
+  model: "llama-3.1-8b-instant"
+  # API key de Groq
+  api_key: ""
+  # URL base (necesaria para usar Groq con el cliente de OpenAI)
+  base_url: "https://api.groq.com/openai/v1"
+  # Longitud del resumen (en líneas)
+  resumen_min_lineas: 5
+  resumen_max_lineas: 8
+  # Temperatura para generación (0.0 = más determinístico)
+  temperature: 0.2
+
+# --- Validación ---
+validacion:
+  # Tiempo máximo de espera para validar un link (segundos)
+  link_timeout: 10
+  # Idiomas para detección de fechas
+  idiomas_fechas:
+    - "es"
+    - "en"
+    - "pt"
+
+# --- Output ---
+output:
+  # Directorio de salida
+  directorio: "output"
+  # Formatos a generar
+  formatos:
+    - json
+    - markdown
+    - csv

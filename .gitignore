@@ -1,0 +1,40 @@
+# Credenciales
+config/credentials/
+*.json
+!config/settings.yaml
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Outputs generados automaticamete
+output/
+
+# OS
+.DS_Store
+Thumbs.db
+
+#apikey
+.env
+
+# Ejemplos/documentación privada
+ejemplos_emprendedurismo.pdf
+ejemplos_emprendedurismo.txt
+ejemplos_tecnologías_médicas.pdf
+ejemplos_tecnologías_médicas.txt
